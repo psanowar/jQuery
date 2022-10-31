@@ -1,0 +1,45 @@
+*{
+
+	margin: 0px;
+	padding: 0px;
+	font-family: candara;
+
+}
+
+
+body{
+
+margin: 100px;
+
+}
+
+.design{
+
+	width: 500px;
+	margin: auto;
+	padding: 40px;
+
+}
+
+.design input{
+
+	display: block;
+	padding: 10px;
+	border: 1px solid #333;
+	margin-bottom: 5px;
+	width: 500px;
+
+}
+
+.design input[type = 'submit']{
+	cursor: pointer;
+	width: 100px;
+}
+
+.design img{
+
+	width: 100px;
+	display: none;
+
+}
+

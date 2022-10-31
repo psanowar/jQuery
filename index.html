@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>query</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+<body> 
+
+	
+	<div class="design">
+		<h2></h2>
+		<img src="assets/img/baby.gif">
+		<input id="uname" type="text" name="" placeholder="Username">
+		<p id="uname"></p>
+		<input id="pass" type="password" name="" placeholder="Password">
+		<p id="pass"></p>
+		<input id="btn" type="submit" value="Log In">
+	</div>
+
+
+	<script src="assets/js/jquery-3.6.1.min.js"></script>
+
+
+
+	<script>
+		
+		(function($){
+
+			$(document).ready(function(){
+
+				//Form submit
+				let uname, pass;
+				$('input#btn').click(function(){
+					uname = $('input#uname').val(); 
+					pass = $('input#pass').val();
+
+
+					if(uname == '' || pass == ''){
+							$('.design img').show();
+						let timer = setInterval(function(){
+							$('.design img').hide();
+							$('h2').html('<span style="color:red">Field must not be Empty!</span>');
+							let timer1 = setInterval(function(){
+								$('h2').html('');
+								clearInterval(timer1);
+							}, 3000);
+							clearInterval(timer);
+						}, 4000);
+
+
+
+						// let timer = setInterval(function(){
+						// 	$('h2').html('timer is out');
+						// 	let timer1 = setInterval(function(){
+						// 		$('h2').html('');
+						// 		clearInterval(timer);
+						// 		clearInterval(timer1);
+						// 	}, 1000);
+						// }, 3000);
+
+					}else{
+						$('.design img').show();
+						let timer = setInterval(function(){
+							$('.design img').hide();
+							$('h2').html('<span style="color:green">Data stable</span>');
+							let timer1 = setInterval(function(){
+								$('h2').html('');
+								clearInterval(timer1);
+							}, 3000);
+							clearInterval(timer);
+						},4000);
+
+						// let timer = setInterval(function(){
+						// 	$('h2').html('timer is out');
+						// 	let timer1 = setInterval(function(){
+						// 		$('h2').html('');
+						// 		clearInterval(timer);
+						// 		clearInterval(timer1);
+						// 	}, 1000);
+						// }, 3000);
+					}
+
+
+
+					// //For username field
+					// if(uname == ''){
+					// 	$('p#uname').html('<span style="color:red; font-size:12px;"> * Required</span>');
+					// 	$('input#uname').css('border-color', 'red');
+					// }else{
+					// 	$('p#uname').html('');
+					// 	$('input#uname').css('border-color', '#333');
+					// }
+
+					// //For password filed
+					// if(pass == ''){
+					// 	$('p#pass').html('<span style="color:red; font-size:12px;"> * Required</span>');
+					// 	$('input#pass').css('border-color', 'red');
+					// }else{
+					// 	$('p#pass').html('');
+					// 	$('input#pass').css('border-color', '#333');
+					// }
+
+
+
+				});				
+
+			});
+
+		})(jQuery)
+
+	</script>
+
+
+</body>
+</html>
